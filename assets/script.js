@@ -9,8 +9,8 @@ var closedLock = document.createElement("span", "class:oi oi-lock-locked");
 
 // time variables
 var timesArr = ['9:00AM', '10:00AM', '11:00AM', '12:00pm', '1:00pm', '2;00pm', '3:00pm', '4:00pm', '5:00pm'];
-let currentTime = moment().format('DD/MM/YYYY hh:mm:ss');                    
-let blockTimeEl = document.getElementById("time-block");
+let currentTime = moment().format('DD/MM/YYYY HH:mm:ss');                    
+let blockTimeEl = document.getElementsByClassName("time-block");
 var isolateTime = currentTime.split(" ");
 var isolateHour = isolateTime[1].split(":");
 var roundHour = isolateHour[0];
@@ -19,7 +19,13 @@ var dayEl = document.querySelector("#currentDay");
 dayEl.textContent = moment().format("MMMM Do, YYYY");
 
 
+function currentHourBlock(roundHour) {
+    document.getElementsById("'" + roundHour + "'");
+    return this; 
+};
+
 function matchTimes() {
+   forEach (document.getElementsByClassName("col-1 hour present"))
     if (blockTimeEl.id === roundHour) {
         blockTimeEl.class = "present";
     } else {
@@ -34,40 +40,11 @@ function matchTimes() {
     }
     
 };
+// for each div that represents a different hour, check to see if its time/hour value matches roundHour
 
 
 
-// timesArr.forEach(matchTimes)  
-    
 
-
-// function getBlockTime(i) {
-    
-        
-    
-//     var blockTime = timesArr[i];
-//     for (var i=moment().hour; i < timesArr.length - 1; i++) {
-//     let blockTime = document.getElementById(timesArr[i]);
-//     console.log(blockTime);
-//     }
-// }
-
-    
-
-function userInput() {
-
-
-    
-    // get html element corresponging to user's click
-
-    
-    
-    // color time blocks based on past, now, or future
-
-
-    // when user clicks middle segment of that row, make it editable
-
-}
 
 
 

@@ -22,9 +22,9 @@ textarea{
 }
 
 .description {
-  display: flex; 
+  /* display: flex; 
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   white-space: pre-wrap;
   border: 1px solid black;
   
@@ -42,9 +42,9 @@ textarea{
 }
 
 .hour {
-  display: flex; 
+  /* display: flex; 
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   border-right: 1px solid black;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
