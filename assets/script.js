@@ -1,4 +1,4 @@
-// $(window).load(localStorage.getItem("data-id", "textContent"));
+// When page is loaded, function to populate time blocks with any saved event descriptions from local storage
 
 function getStorage() {
     document.getElementById("description09").textContent = localStorage.getItem("9:00", "textContent");
@@ -10,41 +10,33 @@ function getStorage() {
     document.getElementById("description15").textContent = localStorage.getItem("3:00", "textContent");
     document.getElementById("description16").textContent = localStorage.getItem("4:00", "textContent");
     document.getElementById("description17").textContent = localStorage.getItem("5:00", "textContent");
-}
-
+};
 getStorage();
 
+var dayEl = document.querySelector("#currentDay"); 
+dayEl.textContent = moment().format("MMMM Do, YYYY");
 
 var userInputEl = document.getElementsByClassName("description");
 var eventDescription = userInputEl.value;
 var saveButton = document.getElementsByClassName("saveBtn");
 var closedLock = document.createElement("span", "class:oi oi-lock-locked");
-// saveButton.appendChild(closedLock);
 
-// time variables
-// var timesArr = ['9:00AM', '10:00AM', '11:00AM', '12:00pm', '1:00pm', '2;00pm', '3:00pm', '4:00pm', '5:00pm'];
-
-
-// use moment to get time in 24 hour format
 let currentTime = moment().format('DD/MM/YYYY HH:mm:ss');
 
-// identify the div I want to target
+
 let blockTimeEl = document.getElementsByClassName("hour");
 
-// get the hour portion out of the 24-hour time from moment
+// separate the time portion out of the 24-hour time/date from moment
 var isolateTime = currentTime.split(" ");
+// separate the hour from the hour:minute format
 var isolateHour = isolateTime[1].split(":");
+// turn that separated hour into a variable to compare to time block
 var roundHour = isolateHour[0];
 
 
 
-// turn rounded hour into a string for associating with data-id
 
-
-var dayEl = document.querySelector("#currentDay"); 
-dayEl.textContent = moment().format("MMMM Do, YYYY");
-
-
+// compare the time-block's hour identity to the actual current hour, and style accordingly
 var updateHourStatus = function() {
     
     $(".hour").each(function () {
@@ -62,7 +54,7 @@ updateHourStatus();
 
 
 
-// get key:value from local storage and display in textarea element
+
 
 
 
@@ -71,7 +63,6 @@ updateHourStatus();
 
 
 // using save button to assign key:value to local storage
-
 $("#button09").click(function() {
     var descriptionText = document.getElementById("description09").value;
     console.log(descriptionText)
@@ -128,42 +119,6 @@ $("#button09").click(function() {
 
 
 
-//  $(".saveBtn").click(function() {
-//     console.log(this);
-//  });
-
-    // var sib = this.previousSibling.previousSibling.textContent;
-    // console.log(sib);
-    // var getTextArea = $(this).previousElementSibling;
-    // console.log(getTextArea);
-
-    // var next = getNextSibling(getTextArea);
-    // console.log(next);
-
-    // var textToSave = $(this).sibling("#description-text").textContent;
-    // console.log(textToSave);
-    // var buttonSibsText = buttonSib[1].textContent;
-    // console.log(buttonSibsText);
-    // localStorage.setItem('')
-//  })
-
-
-   
-    
-    // for each textarea with a class of "description"
-    // var textValue = $(".description").text();
-    
-
-        // if ($(this).textContent) {
-            
-        //     // for the button element that's a sibling of the description box
-        //     $(this).sibling(".saveBtn").addEventListener("click", storeDescription());
-        //     var storeDescription = function() {
-        //         // save textContent to local storage
-        //         localStorage.setItem(data-id, textContent);
-        //     };
-        // }
-    
 
 
 
