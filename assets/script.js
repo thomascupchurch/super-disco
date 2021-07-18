@@ -1,3 +1,20 @@
+// $(window).load(localStorage.getItem("data-id", "textContent"));
+
+function getStorage() {
+    document.getElementById("description09").textContent = localStorage.getItem("9:00", "textContent");
+    document.getElementById("description10").textContent = localStorage.getItem("10:00", "textContent");
+    document.getElementById("description11").textContent = localStorage.getItem("11:00", "textContent");
+    document.getElementById("description12").textContent = localStorage.getItem("12:00", "textContent");
+    document.getElementById("description13").textContent = localStorage.getItem("1:00", "textContent");
+    document.getElementById("description14").textContent = localStorage.getItem("2:00", "textContent");
+    document.getElementById("description15").textContent = localStorage.getItem("3:00", "textContent");
+    document.getElementById("description16").textContent = localStorage.getItem("4:00", "textContent");
+    document.getElementById("description17").textContent = localStorage.getItem("5:00", "textContent");
+}
+
+getStorage();
+
+
 
 
 var userInputEl = document.getElementsByClassName("description");
