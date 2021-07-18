@@ -1,10 +1,26 @@
 # Work Day Scheduler 
 
 
-## An app for personal organization and time management
+## Purpose
+An app for personal organization and time management
 
 
-## Uses local storage to save user input
+## Built with
+HTML
+CSS
+JavaScript
+Uses local storage to save user input
 
-## made by Thomas Upchurch
+## Screenshot
+![screenshot from Work Day Scheduler](assets/Screen Shot 2021-07-18 at 11.21.08 AM.png)
 
+## Website
+https://thomascupchurch.github.io/super-disco/
+
+## Github Repo
+https://github.com/thomascupchurch/super-disco
+
+## Contribution
+made by Thomas Upchurch
+
+### ©2021 Thomas C. Upchurch
