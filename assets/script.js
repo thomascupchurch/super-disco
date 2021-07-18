@@ -1,6 +1,5 @@
 
 
-
 var userInputEl = document.getElementsByClassName("description");
 var eventDescription = userInputEl.value;
 var saveButton = document.getElementsByClassName("saveBtn");
@@ -8,43 +7,122 @@ var closedLock = document.createElement("span", "class:oi oi-lock-locked");
 // saveButton.appendChild(closedLock);
 
 // time variables
-var timesArr = ['9:00AM', '10:00AM', '11:00AM', '12:00pm', '1:00pm', '2;00pm', '3:00pm', '4:00pm', '5:00pm'];
-let currentTime = moment().format('DD/MM/YYYY HH:mm:ss');                    
-let blockTimeEl = document.getElementsByClassName("time-block");
+// var timesArr = ['9:00AM', '10:00AM', '11:00AM', '12:00pm', '1:00pm', '2;00pm', '3:00pm', '4:00pm', '5:00pm'];
+
+
+// use moment to get time in 24 hour format
+let currentTime = moment().format('DD/MM/YYYY HH:mm:ss');
+
+// identify the div I want to target
+let blockTimeEl = document.getElementsByClassName("hour");
+
+// get the hour portion out of the 24-hour time from moment
 var isolateTime = currentTime.split(" ");
 var isolateHour = isolateTime[1].split(":");
 var roundHour = isolateHour[0];
-    // console.log(roundHour);
+
+
+
+// turn rounded hour into a string for associating with data-id
+
+
 var dayEl = document.querySelector("#currentDay"); 
 dayEl.textContent = moment().format("MMMM Do, YYYY");
 
 
-function currentHourBlock(roundHour) {
-    document.getElementsById("'" + roundHour + "'");
-    return this; 
-};
-
-function matchTimes() {
-   forEach (document.getElementsByClassName("col-1 hour present"))
-    if (blockTimeEl.id === roundHour) {
-        blockTimeEl.class = "present";
-    } else {
-        if (blockTimeEl.id > roundHour) {
-            blockTimeEl.class = "future";
-        } else {
-            if (blockTimeEl.id < roundhour) {
-                blockTimeEl.class = "past";
-            }
-        }
-
-    }
+var updateHourStatus = function() {
     
+    $(".hour").each(function () {
+        if (parseInt($(this).attr("data-id")) == roundHour) {
+            $(this).addClass("present");
+        } else if (parseInt($(this).attr("data-id")) > roundHour) {
+            $(this).addClass("future");
+        } else {
+            $(this).addClass("past");
+        }
+    })
 };
-// for each div that represents a different hour, check to see if its time/hour value matches roundHour
+
+updateHourStatus();
+
+
+
+// get key:value from local storage and display in textarea element
 
 
 
 
+
+
+
+// using save button to assign key:value to local storage
+
+$("#button09").click(function() {
+    var descriptionText = document.getElementById("description09").value;
+    console.log(descriptionText)
+    localStorage.setItem("9:00", descriptionText);
+ });
+
+ $("#button10").click(function() {
+    var descriptionText = document.getElementById("description10").value;
+    console.log(descriptionText)
+    localStorage.setItem("10:00", descriptionText);
+ });
+
+
+
+
+
+
+
+
+
+//  $(".saveBtn").click(function() {
+//     console.log(this);
+//  });
+
+    // var sib = this.previousSibling.previousSibling.textContent;
+    // console.log(sib);
+    // var getTextArea = $(this).previousElementSibling;
+    // console.log(getTextArea);
+
+    // var next = getNextSibling(getTextArea);
+    // console.log(next);
+
+    // var textToSave = $(this).sibling("#description-text").textContent;
+    // console.log(textToSave);
+    // var buttonSibsText = buttonSib[1].textContent;
+    // console.log(buttonSibsText);
+    // localStorage.setItem('')
+//  })
+
+
+   
+    
+    // for each textarea with a class of "description"
+    // var textValue = $(".description").text();
+    
+
+        // if ($(this).textContent) {
+            
+        //     // for the button element that's a sibling of the description box
+        //     $(this).sibling(".saveBtn").addEventListener("click", storeDescription());
+        //     var storeDescription = function() {
+        //         // save textContent to local storage
+        //         localStorage.setItem(data-id, textContent);
+        //     };
+        // }
+    
+
+
+
+
+
+
+
+
+
+// $(".saveBtn").addEventListener("click", saveDescription()); 
 
 
 
@@ -63,20 +141,19 @@ function matchTimes() {
 // THEN the saved events persist
 
 
-// moment.locale();         // en
-// moment().format('LT');   // 6:47 PM
-// moment().format('LTS');  // 6:47:37 PM
-// moment().format('L');    // 07/15/2021
-// moment().format('l');    // 7/15/2021
-// moment().format('LL');   // July 15, 2021
-// moment().format('ll');   // Jul 15, 2021
-// moment().format('LLL');  // July 15, 2021 6:47 PM
-// moment().format('lll');  // Jul 15, 2021 6:47 PM
-// moment().format('LLLL'); // Thursday, July 15, 2021 6:47 PM
-// moment().format('llll'); // Thu, Jul 15, 2021 6:47 PM
+// click listener for 9:00 textarea => runs function to capture entered text
+// $("#description09").click(function() {
+//     console.log("description area 09 has been clicked");
+//     var text09 = this.value;
+//     console.log(text09);
+//     var saveButton09 = document.getElementById("button09");
+//     saveButton09.click(saveToLocalStorage());
+//     document.getElementById("lock09").addClass("hide");
+// })
 
-// moment("20111031", "YYYYMMDD").fromNow(); // 10 years ago
-// moment("20120620", "YYYYMMDD").fromNow(); // 9 years ago
-// moment().startOf('day').fromNow();        // 19 hours ago
-// moment().endOf('day').fromNow();          // in 5 hours
-// moment().startOf('hour').fromNow();      
+// $("#description10").click(function() {
+//     console.log("description area 10 has been clicked");
+//     var text10 = this.value;
+//     console.log(text10);
+    
+// })
