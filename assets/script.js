@@ -15,8 +15,6 @@ function getStorage() {
 getStorage();
 
 
-
-
 var userInputEl = document.getElementsByClassName("description");
 var eventDescription = userInputEl.value;
 var saveButton = document.getElementsByClassName("saveBtn");
