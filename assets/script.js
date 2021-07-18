@@ -69,11 +69,47 @@ $("#button09").click(function() {
     localStorage.setItem("10:00", descriptionText);
  });
 
+ $("#button11").click(function() {
+    var descriptionText = document.getElementById("description11").value;
+    console.log(descriptionText)
+    localStorage.setItem("11:00", descriptionText);
+ });
 
+ $("#button12").click(function() {
+    var descriptionText = document.getElementById("description12").value;
+    console.log(descriptionText)
+    localStorage.setItem("12:00", descriptionText);
+ });
 
+ $("#button13").click(function() {
+    var descriptionText = document.getElementById("description13").value;
+    console.log(descriptionText)
+    localStorage.setItem("1:00", descriptionText);
+ });
 
+ $("#button14").click(function() {
+    var descriptionText = document.getElementById("description14").value;
+    console.log(descriptionText)
+    localStorage.setItem("2:00", descriptionText);
+ });
 
+ $("#button15").click(function() {
+    var descriptionText = document.getElementById("description15").value;
+    console.log(descriptionText)
+    localStorage.setItem("3:00", descriptionText);
+ });
 
+ $("#button16").click(function() {
+    var descriptionText = document.getElementById("description16").value;
+    console.log(descriptionText)
+    localStorage.setItem("4:00", descriptionText);
+ });
+
+ $("#button17").click(function() {
+    var descriptionText = document.getElementById("description17").value;
+    console.log(descriptionText)
+    localStorage.setItem("5:00", descriptionText);
+ });
 
 
 
